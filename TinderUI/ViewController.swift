@@ -101,6 +101,33 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.resetCard()
+            self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x + 500, y: self.people[self.selectedCardCount].center.y)
+        })
+        likedName.append(name[selectedCardCount])
+        likeImageView.alpha = 0
+        selectedCardCount += 1
+        if selectedCardCount >= people.count {
+            performSegue(withIdentifier: "PushList", sender: self)
+        }
+    }
+    
+    @IBAction func badButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.resetCard()
+            self.people[self.selectedCardCount].center = CGPoint(x: self.people[self.selectedCardCount].center.x - 500, y: self.people[self.selectedCardCount].center.y)
+        })
+        likeImageView.alpha = 0
+        selectedCardCount += 1
+        if selectedCardCount >= people.count {
+            performSegue(withIdentifier: "PushList", sender: self)
+        }
+    }
+    
+    
+    
     // MARK: - アプリケーションロジック
     func resetCard() {
         basicCard.center = self.cardOfCenter
