@@ -74,7 +74,7 @@ class ViewController: UIViewController {
                 selectedCardCount += 1
                 print("hidari")
                 if selectedCardCount >= people.count {
-                    print(likedName)
+                    performSegue(withIdentifier: "PushList", sender: self)
                 }
                 return
             } else if card.center.x > self.view.frame.width - 75 {
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
                 likeImageView.alpha = 0
                 selectedCardCount += 1
                 if selectedCardCount >= people.count {
-                    print(likedName)
+                    performSegue(withIdentifier: "PushList", sender: self)
                 }
                 print("migi")
                 return
@@ -105,6 +105,14 @@ class ViewController: UIViewController {
     func resetCard() {
         basicCard.center = self.cardOfCenter
         basicCard.transform = .identity
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushList" {
+            let vc = segue.destination as! ListViewController
+            vc.likedName = likedName
+        }
     }
     
 

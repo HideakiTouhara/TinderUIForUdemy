@@ -209,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ivr-Vu-y4c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ivr-Vu-y4c">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ivr-Vu-y4c" id="F8m-uO-fcb">
@@ -224,6 +224,9 @@
                         <viewLayoutGuide key="safeArea" id="FiX-b1-vZV"/>
                     </view>
                     <navigationItem key="navigationItem" id="t1X-dc-gn5"/>
+                    <connections>
+                        <outlet property="tableView" destination="lY9-ha-BUY" id="1zh-2R-2Xj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYo-fn-aux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
