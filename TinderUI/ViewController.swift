@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         card.transform = CGAffineTransform(rotationAngle: xFromCenter / (view.frame.width) / 2 * -0.785)
         people[selectedCardCount].transform = CGAffineTransform(rotationAngle: xFromCenter / (view.frame.width) / 2 * -0.785)
         
-        if sender.state == UIGestureRecognizerState.ended {
+        if sender.state == UIGestureRecognizer.State.ended {
             if card.center.x < 75 {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.resetCard()
